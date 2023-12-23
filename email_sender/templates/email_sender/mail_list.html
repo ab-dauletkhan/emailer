@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+    <ul class="flex flex-col w-screen items-center">
+        <h2 class="text-center text-lg font-bold">List of mails send</h2>
+        {% for mail in mails %}
+            <li class="border p-4 w-1/2">
+                <a href="" class="link">{{ mail.subject }}</a>
+                <p class="flex justify-between items-center">
+                    <span class="text-blue-700">{{ mail.recipient }}</span>
+                    <span>{{ mail.date_send }}</span>
+                </p>
+                <p class="text-gray">{{ mail.preview_text }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock content %}
